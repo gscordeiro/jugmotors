@@ -7,7 +7,7 @@
 	</label>
 	<g:select id="modelo" name="modelo.id" from="${jugmotors.Modelo.list()}" optionKey="id" required="" value="${pedidoInstance?.modelo?.id}" class="many-to-one"
 		noSelection="${['': 'Selecione um modelo'] }"
-		onchange="${remoteFunction(action: 'buscarOpcionais', update: 'opcionais', params: '\'modelo=\' + escape(this.value)') }"/>
+		onchange="${ajaxFunction(action: 'buscarOpcionais', update: 'opcionais', params: ['modelo': 'escape(this.value)']) }"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: pedidoInstance, field: 'opcionais', 'error')} ">

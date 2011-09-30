@@ -1,6 +1,6 @@
 
 <g:select name="opcionais" from="${opcionaisList}" multiple="multiple" optionKey="id" optionValue="descricao" size="5" class="many-to-many"
-onchange="${remoteFunction(controller: 'opcional', action: 'info', update: 'valorOpcional', params: '\'id=\' + escape(this.value)') }"/>
+onchange="${ajaxFunction(controller: 'opcional', action: 'info', update: 'valorOpcional', params: ['id' : 'escape(this.value)']) }"/>
 
 <span id="valorOpcional"></span>
 
